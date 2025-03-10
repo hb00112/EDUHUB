@@ -1,0 +1,86 @@
+/* search.css */
+.search-results-container {
+    background: var(--bg-card); /* Use theme's card background */
+    border: 1px solid var(--border-color); /* Use theme's border color */
+    border-radius: 8px; /* Rounded corners */
+    max-height: 300px; /* Increased height for better visibility */
+    overflow-y: auto; /* Scrollable if results exceed height */
+    position: absolute;
+    width: calc(100% - 2rem); /* Adjust width to fit within the container */
+    z-index: 1000;
+    margin-top: 0.5rem; /* Add some spacing from the search bar */
+    box-shadow: var(--card-shadow); /* Use theme's card shadow */
+}
+
+.search-result-item {
+    padding: 0.75rem 1rem; /* Increased padding for better spacing */
+    border-bottom: 1px solid var(--border-color); /* Use theme's border color */
+    transition: background-color 0.2s ease; /* Smooth hover effect */
+    cursor: pointer; /* Indicate clickable items */
+    background: black;
+    color: white;
+   
+    margin-right: 350px;
+}
+
+.search-result-item:hover {
+    background-color: rgba(var(--primary), 0.1); /* Highlight on hover */
+}
+
+.search-result-name {
+    font-size: 0.95rem; /* Slightly larger font for names */
+    font-weight: 500; /* Medium weight for emphasis */
+    color: rgb(var(--text-light)); /* Use theme's light text color */
+    margin-bottom: 0.25rem; /* Spacing between name and match */
+}
+
+.search-result-match {
+    font-size: 0.85rem; /* Smaller font for match content */
+    color: rgb(var(--text-dim)); /* Use theme's dim text color */
+    line-height: 1.4; /* Improved readability */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis for overflow */
+}
+
+.no-results {
+    padding: 1rem; /* Increased padding for better spacing */
+    color: rgb(var(--text-dim)); /* Use theme's dim text color */
+    font-style: italic;
+    text-align: center; /* Center-align no results message */
+}
+
+/* Ensure search bar and results align with the theme */
+.notes-search {
+    background-color: var(--bg-card); /* Use theme's card background */
+    border: 1px solid var(--border-color); /* Use theme's border color */
+    border-radius: 8px; /* Rounded corners */
+    padding: 0.5rem; /* Increased padding for better spacing */
+}
+
+.search-input {
+    background: transparent;
+    border: none;
+    padding: 0.5rem;
+    width: 100%; /* Full width */
+    color: rgb(var(--text-light)); /* Use theme's light text color */
+    font-size: 0.9rem;
+}
+
+.search-input::placeholder {
+    color: rgb(var(--text-dim)); /* Use theme's dim text color */
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    color: rgb(var(--text-dim)); /* Use theme's dim text color */
+    cursor: pointer;
+    transition: color 0.2s ease; /* Smooth hover effect */
+}
+
+.search-btn:hover {
+    color: rgb(var(--text-light)); /* Lighten on hover */
+}

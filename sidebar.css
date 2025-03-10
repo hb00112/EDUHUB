@@ -1,0 +1,190 @@
+/*slidebar.css*/
+
+.hb-sidebar-header, .hb-semester-header {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Enhanced styles for better usability */
+.hb-sidebar-subject {
+    cursor: pointer;
+    padding: 8px 10px;
+    margin: 3px 0;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.hb-sidebar-subject:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.hb-sidebar-subject.active-subject {
+    background-color: rgba(71, 130, 229, 0.5);
+    border-left: 3px solid #4782e5;
+}
+
+.hb-subjects-list {
+    margin-left: 10px;
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+.hb-subject-header {
+    display: flex;
+    align-items: center;
+}
+
+.hb-subject-name {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+.hb-subjects-sidebar {
+    width: 300px;
+    background: rgba(var(--bg-dark), 0.8);
+    border-right: 1px solid rgba(var(--primary), 0.3);
+    padding: 24px;
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+}
+.blur-background {
+    filter: blur(4px);
+    pointer-events: none;
+}
+.hb-sidebar-section {
+    margin-bottom: 32px;
+}
+
+.hb-sidebar-header, 
+.hb-semester-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background: rgba(var(--primary), 0.1);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hb-sidebar-header:hover, 
+.hb-semester-header:hover {
+    background: rgba(var(--primary), 0.2);
+    transform: translateY(-1px);
+}
+
+.hb-sidebar-icon {
+    margin-right: 12px;
+    font-size: 18px;
+    color: rgb(var(--highlight));
+}
+
+.hb-sidebar-header h3, 
+.hb-semester-header .hb-semester-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-light);
+    margin: 0;
+    flex: 1;
+}
+
+.hb-expand-icon {
+    cursor: pointer;
+    color: rgb(var(--text-dim));
+}
+
+.hb-sidebar-content, 
+.hb-subjects-list {
+    display: none;
+}
+
+/* Show the first semester and AFCAT subject by default */
+.hb-sidebar-content:first-of-type,
+.hb-subjects-list:first-of-type {
+    display: block;
+}
+
+.hb-semester-item {
+    margin: 8px 0;
+}
+
+.hb-sidebar-subject {
+    list-style: none;
+    padding: 8px 16px;
+    margin: 4px 0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.hb-sidebar-subject:hover {
+    background: rgba(var(--primary), 0.1);
+}
+
+/* Modal specific styles */
+.hb-sidebar-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.hb-sidebar-modal-content {
+    background:  rgba(0, 0, 0, 0.5);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    min-width: 300px;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+.hb-sidebar-modal-title {
+    margin-bottom: 16px;
+    color: var(--text-light);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.hb-sidebar-modal-input {
+    width: 100%;
+    padding: 8px 12px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(var(--primary), 0.3);
+    border-radius: 6px;
+    background: rgba(var(--bg-dark), 0.8);
+    color: var(--text-light);
+}
+
+.hb-sidebar-modal-button {
+    padding: 8px 16px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: rgba(var(--primary), 0.8);
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+.hb-sidebar-modal-button:hover {
+    background: rgba(var(--primary), 1);
+}
+
+.hb-sidebar-modal-button--cancel {
+    background: rgba(var(--text-dim), 0.3);
+}
+
+.hb-sidebar-modal-button--cancel:hover {
+    background: rgba(var(--text-dim), 0.5);
+}
