@@ -6,7 +6,50 @@ class SidebarManager {
         this.onSubjectClick = null;
         this.sidebar = null; // Store the sidebar element reference
         this.initializeKeyboardShortcuts(); // Initialize keyboard shortcuts
+        this.initializeHeaderButton(); // Initialize header button for sidebar toggle
+    }
 
+    initializeHeaderButton() {
+        // Create the toggle button
+        const toggleButton = document.createElement('button');
+        toggleButton.id = 'hb-sidebar-toggle-btn';
+        toggleButton.innerHTML = '☰'; // Hamburger icon
+        toggleButton.style.position = 'fixed';
+        toggleButton.style.top = '10px';
+        toggleButton.style.left = '10px';
+        toggleButton.style.zIndex = '1000';
+        toggleButton.style.background = 'rgba(var(--primary), 0.8)';
+        toggleButton.style.border = 'none';
+        toggleButton.style.borderRadius = '50%';
+        toggleButton.style.width = '40px';
+        toggleButton.style.height = '40px';
+        toggleButton.style.color = 'var(--text-light)';
+        toggleButton.style.cursor = 'pointer';
+        toggleButton.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.2)';
+        toggleButton.style.display = 'none'; // Initially hidden
+
+        // Append the button to the body
+        document.body.appendChild(toggleButton);
+
+        // Add click event to toggle the sidebar
+        toggleButton.addEventListener('click', () => {
+            this.toggleSidebar();
+        });
+
+        // Show the button on mobile devices
+        const mediaQuery = window.matchMedia('(max-width: 767px)');
+        if (mediaQuery.matches) {
+            toggleButton.style.display = 'block';
+        }
+
+        // Update button visibility on window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth <= 767) {
+                toggleButton.style.display = 'block';
+            } else {
+                toggleButton.style.display = 'none';
+            }
+        });
     }
 
     initializeKeyboardShortcuts() {
