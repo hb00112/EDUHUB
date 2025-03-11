@@ -1319,3 +1319,249 @@
         background-color: #444;
     }
 }
+
+
+/* Mobile Responsive Styles */
+@media (max-width: 576px) {
+    /* Unit Notes Header */
+    .unit-notes-header-top {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    
+    #module-display-title {
+      margin: 0;
+      font-size: 1.125rem;
+    }
+    
+    .unit-notes-controls {
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+    
+    .unit-notes-search {
+      width: 100%;
+    }
+    
+    .unit-action-btn {
+      width: 100%;
+      justify-content: center;
+    }
+    
+    /* Units Grid */
+    .units-grid {
+      grid-template-columns: 1fr;
+      padding: 0.75rem;
+    }
+    
+    /* Accordion Items */
+    .accordion-header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 12px 15px;
+      gap: 8px;
+    }
+    
+    .accordion-controls {
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    
+    .progress-container {
+      width: 100%;
+    }
+    
+    .unit-actions {
+      align-self: flex-end;
+    }
+    
+    /* Note Tabs */
+    .note-tabs-header {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .note-tabs-scroll {
+      max-width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    .note-tabs-controls {
+      margin-left: 0;
+      width: 100%;
+      justify-content: space-between;
+    }
+    
+    .note-tab {
+      min-width: 80px;
+      padding: 8px 10px;
+    }
+    
+    /* Note Display */
+    .note-header {
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .note-controls {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .note-action-buttons {
+      gap: 5px;
+    }
+    
+    .note-action-btn {
+      padding: 0.3rem 0.6rem;
+      font-size: 0.8rem;
+    }
+    
+    .btn-icon {
+      font-size: 0.9rem;
+    }
+    
+    /* Note Edit Form */
+    .note-form-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .note-form-actions {
+      width: 100%;
+      margin-left: 0;
+      justify-content: space-between;
+    }
+    
+    /* Text Editor Toolbar */
+    .editor-toolbar {
+      flex-wrap: wrap;
+      gap: 2px;
+    }
+    
+    .toolbar-btn {
+      padding: 4px 8px;
+      font-size: 0.8rem;
+    }
+    
+    /* Unit Creator Modal */
+    .unit-creator-content {
+      width: 95%;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    
+    /* Touch-friendly buttons */
+    button, 
+    .note-tab, 
+    .accordion-header,
+    .unit-action-btn,
+    .save-btn,
+    .cancel-btn,
+    .add-note-btn,
+    .unit-edit-btn, 
+    .unit-delete-btn {
+      min-height: 44px; /* Minimum touch target size */
+    }
+    
+    /* Fix for note content scrolling */
+    .note-content,
+    .note-content-editor {
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Improve form input experience on mobile */
+    input, textarea {
+      font-size: 16px; /* Prevents iOS zoom on focus */
+    }
+    
+    /* Export Modal */
+    .note-export-modal-content {
+      width: 95%;
+    }
+    
+    .note-export-format-item {
+      padding: 10px;
+    }
+    
+    .note-export-format-icon {
+      margin-right: 10px;
+    }
+    
+    /* Fix for any font-size issues */
+    .unit-title {
+      font-size: 16px;
+    }
+    
+    .note-title {
+      font-size: 1.2rem;
+    }
+    
+    /* Fix for overlapping buttons */
+    .note-action-btn {
+      margin-bottom: 5px;
+    }
+  }
+  
+  /* Additional tweaks for very small screens */
+  @media (max-width: 360px) {
+    /* For devices like Samsung M13 in portrait mode */
+    .note-action-btn {
+      padding: 0.3rem 0.4rem;
+      font-size: 0.75rem;
+    }
+    
+    .note-tab {
+      min-width: 70px;
+      max-width: 120px;
+    }
+    
+    .toolbar-btn {
+      padding: 3px 6px;
+    }
+    
+    /* Increase spacing for better touch targets */
+    .accordion-item,
+    .note-tabs-container,
+    .note-display {
+      margin-bottom: 15px;
+    }
+    
+    /* Make sure note content is readable */
+    .note-content {
+      font-size: 14px;
+    }
+  }
+  
+  /* Fix for any potential landscape mode issues */
+  @media (max-width: 768px) and (orientation: landscape) {
+    /* Allow scrolling in modals in landscape */
+    .unit-creator-container,
+    .note-export-modal-overlay {
+      align-items: flex-start;
+      padding: 10px 0;
+    }
+    
+    .unit-creator-content,
+    .note-export-modal-content {
+      max-height: 85vh;
+      overflow-y: auto;
+    }
+    
+    /* Improve layout in landscape */
+    .note-tabs-header {
+      flex-direction: row;
+    }
+    
+    .note-tabs-controls {
+      margin-left: auto;
+      width: auto;
+    }
+  }
