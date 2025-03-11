@@ -22,7 +22,6 @@ const homeSection = {
                 <div class="flex gap-6">
                     <button class="btn btn-primary" data-section="subjects">Get Started</button>
                     <button class="btn btn-secondary" data-section="resources">Learn More</button>
-                    
                 </div>
             </div>
 
@@ -135,6 +134,15 @@ function initializeNavLinks() {
 
             // Show the target section
             document.getElementById(targetSection).classList.add('active');
+
+            // Initialize the section content if it's the planner or quizzes section
+            if (targetSection === 'planner') {
+                plannerSection.initialize();
+            } else if (targetSection === 'quizzes') {
+                quizzesSection.initialize();
+            }  else if (targetSection === 'resources') {
+                resourcesSection.initialize();
+            }
 
             // Hide the mobile navigation menu if it's visible
             const mobileNav = document.querySelector('.mobile-nav');
