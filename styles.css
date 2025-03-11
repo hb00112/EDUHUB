@@ -76,7 +76,7 @@ body {
     background-clip: text;
     color: transparent;
     display: inline-block;
-    font-size: 55px;
+    font-size: 50px;
 }
 
 .blob {
@@ -111,17 +111,18 @@ body {
 
 /* Cards */
 .glass-card {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     transition: all 0.3s ease;
+    box-shadow: 0 10px 30px -5px rgba(var(--primary), 0.2);
 }
 
 .glass-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 10px 30px -5px rgba(var(--primary), 0.2);
+    transform: translateY(-7px);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 10px 30px -5px rgba(var(--primary), 0.4);
 }
 
 /* Navigation */
@@ -171,18 +172,18 @@ body {
         rgb(var(--secondary))
     );
     border: none;
-    color: rgb(var(--text-light));
+    color: white;
 }
 
 .btn-secondary {
     background: transparent;
-    border: 1px solid rgba(var(--text-light), 0.2);
     color: rgb(var(--text-light));
+    box-shadow: 0 10px 20px -10px rgba(var(--primary), 0.4);
 }
 
 .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px -10px rgba(var(--primary), 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -10px rgba(var(--primary), 0.6);
 }
 
 /* Section Template */
@@ -203,7 +204,7 @@ body {
 }
 
 span.block {
-    font-size: 55px;
+    font-size: 40px;
 }
 
 .coming-soon-text {
@@ -288,3 +289,4 @@ span.block {
         padding: 0.75rem 1.5rem;
     }
 }
+
