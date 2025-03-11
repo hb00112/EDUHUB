@@ -41,7 +41,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -76,6 +76,7 @@ body {
     background-clip: text;
     color: transparent;
     display: inline-block;
+    font-size: 55px;
 }
 
 .blob {
@@ -202,7 +203,7 @@ body {
 }
 
 span.block {
-    font-size: 74px;
+    font-size: 55px;
 }
 
 .coming-soon-text {
