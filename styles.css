@@ -1,13 +1,15 @@
 /* styles.css */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
-:root {
-    --highlight: 236, 72, 153;
-    --primary: 79, 70, 229;
-    --secondary: 236, 72, 153;
-    --bg-dark: 15, 23, 42;
+:root{
+   
+    --highlight: 236, 72, 153; 
+    --primary: 79, 70, 229;    
+    --secondary: 236, 72, 153; 
+    --bg-dark: 15, 23, 42;     
     --text-light: 255, 255, 255;
-    --text-dim: 156, 163, 175;
+    --text-dim: 156, 163, 175;  
+ 
     --bg-darker: #0F172A;
     --bg-card: rgba(30, 27, 75, 0.4);
     --text-primary: #35393d;
@@ -15,11 +17,24 @@
     --border-color: rgba(148, 163, 184, 0.1);
     --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
     --hover-shadow: 0 8px 30px rgba(124, 58, 237, 0.15);
-    --primary-color: #4F46E5;
-    --secondary-color: #EC4899;
-    --accent-light: #818CF8;
-    --surface-light: #1E293B;
 }
+
+
+
+:root {
+    --primary-color: #4F46E5; 
+    --secondary-color: #EC4899;
+    --bg-dark: #0F172A;
+    --bg-darker: #0F172A; 
+        --card-bg: rgba(30, 27, 75, 0.4); 
+    --text-light: #FFFFFF; 
+    --text-dim: #9CA3AF; 
+    --text-primary: #35393D; 
+    --text-secondary: #3B3F46; 
+    --border-color: #2D3748; 
+    --accent-light: #818CF8; 
+    --surface-light: #1E293B;
+  }
 
 /* Base Styles */
 * {
