@@ -1,10 +1,17 @@
+// main.js
+document.addEventListener('DOMContentLoaded', () => {
+    homeSection.initialize();
+    initializeMobileNav();
+    initializeNavLinks();
+});
+
 const homeSection = {
     initialize: function() {
         const homeContent = `
             <div class="container mx-auto px-6">
                 <div class="text-reveal mb-8">
                     <h1 class="text-6xl md:text-8xl font-bold mb-6">
-                        <span class="block">Welcome to Mordern Learning</span>
+                        <span class="block">Welcome to Modern Learning</span>
                         <span class="gradient-text">Hemant Borana</span>
                     </h1>
                 </div>
@@ -15,6 +22,7 @@ const homeSection = {
                 <div class="flex gap-6">
                     <button class="btn btn-primary" data-section="subjects">Get Started</button>
                     <button class="btn btn-secondary" data-section="resources">Learn More</button>
+                    
                 </div>
             </div>
 
@@ -91,7 +99,48 @@ const homeSection = {
     }
 };
 
-// Initialize home section
-document.addEventListener('DOMContentLoaded', () => {
-    homeSection.initialize();
-});
+function initializeMobileNav() {
+    const header = document.querySelector('header');
+    const mobileNav = document.createElement('div');
+    mobileNav.classList.add('mobile-nav');
+    mobileNav.innerHTML = `
+        <a href="#" class="nav-link" data-section="home">Home</a>
+        <a href="#" class="nav-link" data-section="subjects">Subjects</a>
+        <a href="#" class="nav-link" data-section="planner">Study Planner</a>
+        <a href="#" class="nav-link" data-section="quizzes">Quizzes</a>
+        <a href="#" class="nav-link" data-section="resources">Resources</a>
+    `;
+    header.appendChild(mobileNav);
+
+    const eduHubText = document.querySelector('.text-2xl.font-bold.gradient-text');
+    eduHubText.addEventListener('click', () => {
+        mobileNav.classList.toggle('active');
+    });
+}
+
+function initializeNavLinks() {
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default anchor behavior
+
+            // Get the target section from the data-section attribute
+            const targetSection = link.getAttribute('data-section');
+
+            // Hide all sections
+            document.querySelectorAll('.section-content').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show the target section
+            document.getElementById(targetSection).classList.add('active');
+
+            // Hide the mobile navigation menu if it's visible
+            const mobileNav = document.querySelector('.mobile-nav');
+            if (mobileNav.classList.contains('active')) {
+                mobileNav.classList.remove('active');
+            }
+        });
+    });
+}
