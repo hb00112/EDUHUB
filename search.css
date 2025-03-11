@@ -84,3 +84,98 @@
 .search-btn:hover {
     color: rgb(var(--text-light)); /* Lighten on hover */
 }
+
+/* Mobile View Styles for Search (Samsung M13 and other mobile devices) */
+@media screen and (max-width: 767px) {
+    /* Search container adjustments */
+    .notes-search {
+      padding: 0.4rem;
+      width: 100%;
+      position: relative;
+    }
+    
+    /* Search input field adjustments */
+    .search-input {
+      padding: 0.5rem 0.4rem;
+      font-size: 1rem; /* Slightly larger for better touch input */
+    }
+    
+    /* Ensure the search button is easy to tap */
+    .search-btn {
+      padding: 0.5rem;
+      font-size: 1.2rem; /* Larger icon for better touch target */
+      position: absolute;
+      right: 0.4rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    
+    /* Results container adjustments */
+    .search-results-container {
+      width: 100%; /* Full width on mobile */
+      max-height: 350px; /* Taller results area for mobile scrolling */
+      margin-top: 0.4rem;
+      left: 0;
+      right: 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow for better visibility */
+    }
+    
+    /* Search result item adjustments */
+    .search-result-item {
+      padding: 0.8rem;
+      margin-right: 0; /* Remove the fixed margin */
+    }
+    
+    /* Search result name adjustments */
+    .search-result-name {
+      font-size: 1rem; /* Slightly larger for better readability */
+      margin-bottom: 0.3rem;
+    }
+    
+    /* Search result match adjustments */
+    .search-result-match {
+      font-size: 0.9rem; /* Larger for better readability */
+      -webkit-line-clamp: 2; /* Limit to 2 lines on mobile */
+    }
+    
+    /* No results message adjustments */
+    .no-results {
+      padding: 1.2rem 0.8rem;
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Additional styles for touch devices */
+  @media (pointer: coarse) {
+    /* Ensure all interactive elements have adequate touch targets */
+    .search-btn,
+    .search-result-item {
+      min-height: 44px; /* Apple's recommendation for minimum touch target */
+    }
+    
+    /* Add extra space between results for easier selection */
+    .search-result-item {
+      padding: 0.9rem 0.8rem;
+    }
+    
+    /* Make the search input easier to use on touch devices */
+    .search-input {
+      height: 44px;
+    }
+    
+    /* Improve scroll behavior on touch devices */
+    .search-results-container {
+      -webkit-overflow-scrolling: touch; /* Smoother scrolling on iOS */
+      scrollbar-width: thin; /* Thinner scrollbar on Firefox */
+    }
+    
+    /* Better scrollbar for WebKit browsers */
+    .search-results-container::-webkit-scrollbar {
+      width: 4px;
+    }
+    
+    .search-results-container::-webkit-scrollbar-thumb {
+      background-color: rgba(var(--text-dim), 0.3);
+      border-radius: 4px;
+    }
+  }
