@@ -32,3 +32,87 @@
     overflow-y: auto;
     height: 100%;
 }
+
+/* Mobile Responsive CSS for Subjects Container and Sidebar */
+@media screen and (max-width: 768px) {
+    .subjects-container {
+      flex-direction: column;
+      min-height: calc(100vh - 60px);
+      padding: 16px;
+      gap: 16px;
+      margin-top: -40px;
+      border-radius: 12px;
+    }
+    
+    .hb-subjects-sidebar {
+      width: 100%;
+      height: auto;
+      max-height: 250px; /* Limit height on mobile */
+      padding: 10px;
+      margin-bottom: 12px;
+      border-radius: 10px;
+    }
+    
+    .subject-content {
+      padding: 12px;
+      width: 100%;
+      height: auto;
+      flex-grow: 1;
+    }
+  }
+  
+  /* Additional adjustments for very small screens like Samsung M13 */
+  @media screen and (max-width: 480px) {
+    .subjects-container {
+      padding: 12px;
+      gap: 12px;
+      margin-top: -30px;
+      border-radius: 10px;
+    }
+    
+    .hb-subjects-sidebar {
+      padding: 8px;
+      max-height: 200px;
+      margin-bottom: 10px;
+    }
+    
+    .subject-content {
+      padding: 10px;
+    }
+    
+    /* Add this to handle the overflow issue common on small screens */
+    body, html {
+      width: 100%;
+      overflow-x: hidden;
+    }
+    
+    /* Additional performance optimization for smoother scrolling */
+    .hb-subjects-sidebar,
+    .subject-content {
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Handle the case where the content might have heavy images or tables */
+    .subject-content img,
+    .subject-content table {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  
+  /* Fix for Samsung devices that might have specific rendering issues */
+  @media screen and (max-width: 360px) {
+    .subjects-container {
+      padding: 10px;
+      gap: 10px;
+    }
+    
+    /* Ensure the UI elements don't get too cramped on very small screens */
+    .hb-subjects-sidebar {
+      padding: 6px;
+    }
+    
+    .subject-content {
+      padding: 8px;
+    }
+  }
