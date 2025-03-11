@@ -6,11 +6,11 @@
     --highlight: 236, 72, 153; 
     --primary: 79, 70, 229;    
     --secondary: 236, 72, 153; 
-    --bg-dark: 15, 23, 42;     
+   /* --bg-dark: 15, 23, 42;     */
     --text-light: 255, 255, 255;
     --text-dim: 156, 163, 175;  
  
-    --bg-darker: #0F172A;
+  /*  --bg-darker: #0F172A;*/
     --bg-card: rgba(30, 27, 75, 0.4);
     --text-primary: #35393d;
     --text-secondary: #3b3f46;
