@@ -12,7 +12,7 @@ const homeSection = {
                 <div class="text-reveal mb-8">
                     <h1 class="text-6xl md:text-8xl font-bold mb-6">
                         <span class="block">Welcome to Modern Learning</span>
-                        <span class="gradient-text">Hemant Borana</span>
+                        <span class="gradient-text">Himanshu Borana</span>
                     </h1>
                 </div>
                 <p class="text-xl md:text-2xl text-gray-400 mb-12 text-reveal">
