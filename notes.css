@@ -478,3 +478,218 @@ button-group {
 }
 */
 
+
+
+/* Mobile View Styles for Notes (Samsung M13 and other mobile devices) */
+@media screen and (max-width: 767px) {
+    /* General container adjustments */
+    .notes-content {
+      padding: 1rem;
+    }
+  
+    /* Header adjustments */
+    .notes-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.8rem;
+    }
+  
+    .notes-header h2 {
+      font-size: 1.3rem;
+      width: 100%;
+    }
+  
+    /* Search adjustments */
+    .notes-search {
+      width: 100%;
+    }
+  
+    .search-input {
+      width: 100%;
+      font-size: 1rem;
+    }
+  
+    /* Action buttons */
+    .notes-actions {
+      width: 100%;
+      flex-wrap: wrap;
+    }
+  
+    .notes-action-btn {
+      flex: 1;
+      min-width: 120px;
+      justify-content: center;
+      padding: 0.6rem 0.8rem;
+      font-size: 0.9rem;
+    }
+  
+    /* Grid adjustments for notes */
+    .notes-grid {
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+    }
+  
+    /* Note card adjustments */
+    .note-card {
+      padding: 1rem;
+    }
+  
+    .note-title {
+      font-size: 1.05rem;
+    }
+  
+    .note-preview {
+      -webkit-line-clamp: 2;
+      font-size: 0.85rem;
+    }
+  
+    .note-meta {
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+  
+    /* Note editor adjustments */
+    .note-editor-container {
+      padding: 1rem;
+    }
+  
+    .note-editor-header {
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.8rem;
+    }
+  
+    .note-title-input {
+      font-size: 1.1rem;
+      margin-right: 0;
+    }
+  
+    .note-content-input {
+      padding: 0.8rem 0;
+      font-size: 0.9rem;
+    }
+  
+    .note-editor-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .editor-action-btn {
+      width: 100%;
+      padding: 0.7rem;
+      font-size: 1rem;
+    }
+  
+    /* Module grid adjustments */
+    .modules-grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+      padding: 15px;
+    }
+  
+    .module-card {
+      height: 150px;
+    }
+  
+    .module-card-content {
+      padding: 15px;
+    }
+  
+    .module-name {
+      font-size: 18px;
+    }
+  
+    /* Module creator adjustments */
+    .module-creator-content {
+      width: 90%;
+      max-width: 350px;
+    }
+  
+    .module-creator-header h3 {
+      font-size: 18px;
+    }
+  
+    .module-creator-body {
+      padding: 15px;
+    }
+  
+    .module-input {
+      font-size: 15px;
+      padding: 8px;
+    }
+  
+    .module-creator-actions {
+      flex-direction: column;
+    }
+  
+    button.action-btn {
+      width: 100%;
+      margin: 5px 0;
+    }
+  
+    /* Empty state messages */
+    .empty-notes-message,
+    .empty-modules-message {
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Additional styles for better touch interaction */
+  @media (pointer: coarse) {
+    /* Ensure large enough touch targets */
+    .note-edit-btn, 
+    .note-delete-btn,
+    .search-btn,
+    .notes-action-btn,
+    .editor-action-btn,
+    button.action-btn {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  
+    /* Add more space between touchable elements */
+    .notes-grid {
+      gap: 1rem;
+    }
+  
+    .note-card {
+      margin-bottom: 0.5rem;
+    }
+  
+    /* Make form inputs more touch-friendly */
+    .note-title-input,
+    .note-content-input,
+    .module-input {
+      padding: 10px;
+      font-size: 16px; /* iOS requires 16px to prevent zoom */
+    }
+  
+    /* Improve scrollable areas */
+    .notes-grid,
+    .note-content-input {
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  
+  /* Specific orientation adjustments */
+  @media screen and (max-width: 767px) and (orientation: landscape) {
+    /* Adjust for landscape orientation on mobile */
+    .modules-grid {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+  
+    .note-editor-actions,
+    .module-creator-actions {
+      flex-direction: row;
+    }
+  
+    .editor-action-btn,
+    button.action-btn {
+      width: auto;
+      flex: 1;
+    }
+  }
