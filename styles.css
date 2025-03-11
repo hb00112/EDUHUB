@@ -1,15 +1,13 @@
-/*styles.css*/
+/* styles.css */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
-:root{
-   
-    --highlight: 236, 72, 153; 
-    --primary: 79, 70, 229;    
-    --secondary: 236, 72, 153; 
-    --bg-dark: 15, 23, 42;     
+:root {
+    --highlight: 236, 72, 153;
+    --primary: 79, 70, 229;
+    --secondary: 236, 72, 153;
+    --bg-dark: 15, 23, 42;
     --text-light: 255, 255, 255;
-    --text-dim: 156, 163, 175;  
- 
+    --text-dim: 156, 163, 175;
     --bg-darker: #0F172A;
     --bg-card: rgba(30, 27, 75, 0.4);
     --text-primary: #35393d;
@@ -17,24 +15,12 @@
     --border-color: rgba(148, 163, 184, 0.1);
     --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
     --hover-shadow: 0 8px 30px rgba(124, 58, 237, 0.15);
+    --primary-color: #4F46E5;
+    --secondary-color: #EC4899;
+    --accent-light: #818CF8;
+    --surface-light: #1E293B;
 }
 
-
-
-:root {
-    --primary-color: #4F46E5; 
-    --secondary-color: #EC4899;
-   --bg-dark: #0F172A; 
-    --bg-darker: #0F172A; 
-        --card-bg: rgba(30, 27, 75, 0.4); 
-    --text-light: #FFFFFF; 
-    --text-dim: #9CA3AF; 
-    --text-primary: #35393D; 
-    --text-secondary: #3B3F46; 
-    --border-color: #2D3748; 
-    --accent-light: #818CF8; 
-    --surface-light: #1E293B;
-  }
 /* Base Styles */
 * {
     margin: 0;
@@ -67,7 +53,7 @@ body {
 /* Animations and Effects */
 .gradient-text {
     background: linear-gradient(
-        135deg, 
+        135deg,
         rgb(var(--primary)) 0%,
         rgb(var(--secondary)) 100%
     );
@@ -183,9 +169,6 @@ body {
     box-shadow: 0 10px 20px -10px rgba(var(--primary), 0.5);
 }
 
-/* Custom Cursor */
-
-
 /* Section Template */
 .section-template {
     padding: 2rem;
@@ -202,8 +185,9 @@ body {
     text-align: center;
     padding: 4rem 2rem;
 }
+
 span.block {
-    font-size: 74px; /* Change 24px to any desired size */
+    font-size: 74px;
 }
 
 .coming-soon-text {
@@ -215,94 +199,76 @@ span.block {
     color: transparent;
 }
 
+/* Mobile Navigation */
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
 
-/* Mobile View Styles */
-@media only screen and (max-width: 768px) {
-    /* Base Styles */
-    body {
-        font-size: 14px; /* Adjust font size for better readability on mobile */
+.mobile-nav.active {
+    display: flex;
+}
+
+.mobile-nav .nav-link {
+    padding: 0.5rem 0;
+    color: rgb(var(--text-light));
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        rgb(var(--primary)),
+        rgb(var(--secondary))
+    );
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.mobile-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hidden {
+        display: none;
     }
 
-    /* Section Transitions */
-    .section-content {
-        transform: translateY(10px); /* Reduce the translateY value for smoother transition */
+    .mobile-nav {
+        display: none;
     }
 
-    /* Animations and Effects */
-    .blob {
-        width: 300px; /* Reduce blob size for mobile */
-        height: 300px;
-        filter: blur(80px); /* Adjust blur for better performance */
+    .mobile-nav.active {
+        display: flex;
     }
 
-    .blob-1 {
-        top: -50px;
-        left: -50px;
+    .text-6xl {
+        font-size: 3rem;
     }
 
-    .blob-2 {
-        top: 10%;
-        right: -50px;
+    .text-8xl {
+        font-size: 4rem;
     }
 
-    /* Cards */
     .glass-card {
-        padding: 1rem; /* Adjust padding for smaller screens */
-        margin: 1rem 0; /* Add margin for better spacing */
+        margin-bottom: 1rem;
     }
 
-    .glass-card:hover {
-        transform: translateY(-3px); /* Reduce the hover effect for mobile */
-    }
-
-    /* Navigation */
-    .nav-link {
-        padding: 0.5rem 0.75rem; /* Adjust padding for smaller screens */
-    }
-
-    .nav-link::after {
-        bottom: -1px; /* Adjust the underline position */
-    }
-
-    /* Buttons */
     .btn {
-        padding: 0.75rem 1.5rem; /* Adjust button padding for mobile */
-        font-size: 14px; /* Adjust font size for buttons */
-    }
-
-    .btn-primary, .btn-secondary {
-        width: 100%; /* Make buttons full width on mobile */
-        margin: 0.5rem 0; /* Add margin for better spacing */
-    }
-
-    /* Section Template */
-    .section-template {
-        padding: 1rem; /* Reduce padding for smaller screens */
-    }
-
-    .section-header {
-        margin-bottom: 1.5rem; /* Adjust margin for better spacing */
-    }
-
-    .coming-soon-container {
-        padding: 2rem 1rem; /* Adjust padding for smaller screens */
-    }
-
-    .coming-soon-text {
-        font-size: 1.75rem; /* Reduce font size for mobile */
-    }
-
-    span.block {
-        font-size: 48px; /* Adjust block font size for mobile */
-    }
-
-    /* Hide or adjust elements that are not necessary on mobile */
-    .blob {
-        display: none; /* Optionally hide blobs on mobile for better performance */
-    }
-
-    /* Adjust grid or flex layouts for mobile */
-    .grid-container, .flex-container {
-        flex-direction: column; /* Stack elements vertically on mobile */
+        padding: 0.75rem 1.5rem;
     }
 }
