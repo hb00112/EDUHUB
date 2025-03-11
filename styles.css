@@ -204,7 +204,8 @@ body {
 }
 
 span.block {
-    font-size: 40px;
+    font-size: 34px;
+    padding-bottom: 10px;
 }
 
 .coming-soon-text {
